@@ -3,7 +3,7 @@ const ShopService = () => {
   const _baseOffset = 5;
 
   const getAllGoods = async (offset: number = _baseOffset) => {
-    const request = await fetch(`${_baseUrl}?offset=${offset}&limit=10`);
+    const request = await fetch(`${_baseUrl}?offset=${offset}&limit=12`);
     return await request.json();
   };
 

@@ -1,23 +1,11 @@
 import { Link } from "react-router-dom";
 
-import { useEffect, useState } from "react";
-
+import SearchPanel from "../SearchPanel/SearchPanel";
 import CartBlock from "../CartBlock/CartBlock";
-import ShopService from "../../service/ShopService";
-
-import { Goods } from "./../../models/models";
 
 import "./Header.scss";
 
 const Header = () => {
-  const [goods, setGoods] = useState<Goods[] | null>(null);
-  const shopService = ShopService();
-
-  useEffect(() => {
-    shopService.getAllGoods().then((res) => setGoods(res));
-  }, []);
-  console.log(goods);
-
   return (
     <div className="header">
       <div className="header__wrap">
@@ -25,7 +13,10 @@ const Header = () => {
           Shopping Store
         </Link>
       </div>
-      <div className="wrap header__cart-btn-wrap">
+      <div className="header__search">
+        <SearchPanel />
+      </div>
+      <div className="header__cart-btn-wrap">
         <CartBlock />
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { PropsWithChildren } from "react";
+
 interface Category {
   id: number;
   name: string;
@@ -5,10 +7,26 @@ interface Category {
 }
 
 export interface Goods {
-  id: number;
+  id?: number;
   title: string;
   price: number;
   description: string;
   category: Category;
   images: string[];
+  key?: number;
+}
+
+export interface GoodsPropsArr {
+  goods: Goods[];
+}
+
+export interface GoodsPropsObj {
+  goods: Goods;
+}
+
+export interface ButtonPropsPrimary {
+  type: string;
+  children?: React.ReactNode;
+  size: string;
+  onClick: () => void;
 }

@@ -1,4 +1,9 @@
 .home {
-	display: flex;
-	flex-wrap: wrap;
+	&__title {
+		width: 200px;
+		margin: 0 auto;
+		h1 {
+			margin-bottom: 10px;
+		}
+	}
 }

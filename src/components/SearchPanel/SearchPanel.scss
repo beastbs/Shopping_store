@@ -1,0 +1,12 @@
+.search {
+	&__title {
+		margin-bottom: 5px;
+	}
+	&__input {
+		width: 400px;
+		height: 40px;
+		font-size: 20px;
+		outline: none;
+		padding-left: 10px;
+	}
+}

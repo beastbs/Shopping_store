@@ -1,0 +1,25 @@
+@import "../../styles/variables.scss";
+
+.btn {
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 5px 10px;
+	cursor: pointer;
+	&--primary {
+		background-color: $primary;
+		&:hover {
+			background-color: $success;
+			outline: none;
+		}
+	}
+	&--success {
+		background-color: $success;
+	}
+	&--small {
+		font-size: 16px;
+	}
+	&--medium {
+		font-size: 18px;
+	}
+}

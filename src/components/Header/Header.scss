@@ -1,9 +1,12 @@
+@import "../../styles/variables.scss";
+
 .header {
-	height: 80px;
+	height: 100px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 30px;
+	border-bottom: 3px solid $second-bg;
 	&__title {
 		color: #fff;
 		text-decoration: none;
@@ -11,10 +14,6 @@
 		font-weight: bold;
 	}
 	&__cart-btn-wrap {
-		justify-content: flex-end;
+		// justify-content: flex-end;
 	}
-}
-.wrap {
-	display: flex;
-	flex-grow: 1;
 }
