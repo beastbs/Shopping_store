@@ -1,5 +1,3 @@
-import { PropsWithChildren } from "react";
-
 interface Category {
   id: number;
   name: string;
