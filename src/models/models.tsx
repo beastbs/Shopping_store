@@ -21,6 +21,9 @@ export interface GoodsPropsArr {
 export interface GoodsPropsObj {
   goods: Goods;
 }
+export interface ProductPropsObj {
+  product: Goods;
+}
 
 export interface ButtonPropsPrimary {
   type: string;
@@ -30,7 +33,7 @@ export interface ButtonPropsPrimary {
 }
 
 export interface CartItemProps {
-  id: number;
+  id?: number;
   title: string;
   price: number;
   index: number;
@@ -47,6 +50,13 @@ export interface StateParams {
 
 export interface StateParamsWithCart {
   cart: StateParams;
+}
+
+interface StateWithCurrGoods {
+  currentGoods: null | Goods;
+}
+export interface StateParamsWithGoods {
+  goods: StateWithCurrGoods;
 }
 
 export interface CartMenuProps {

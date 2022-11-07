@@ -1,10 +1,15 @@
+import { useDispatch } from "react-redux";
+
+import { clearAllItems } from "../../redux/cart/reducer";
+import CartItem from "../CartItem/CartItem";
 import Button from "../Button/Button";
 import { CartMenuProps, Goods } from "../../models/models";
 
 import "./CartMenu.scss";
-import CartItem from "../CartItem/CartItem";
 
 const CartMenu = ({ items, totalPrice, onClick }: CartMenuProps) => {
+  const dispatch = useDispatch();
+
   const totalItems = items.map((product: Goods, i: number) => (
     <CartItem
       key={product.id}
@@ -14,6 +19,10 @@ const CartMenu = ({ items, totalPrice, onClick }: CartMenuProps) => {
       index={i}
     />
   ));
+
+  const onClearAllFromCart = () => {
+    dispatch(clearAllItems([]));
+  };
 
   return (
     <div className="cart-menu">
@@ -32,11 +41,7 @@ const CartMenu = ({ items, totalPrice, onClick }: CartMenuProps) => {
             <Button type="primary" size="medium" onClick={onClick}>
               To order
             </Button>
-            <Button
-              type="danger"
-              size="medium"
-              onClick={() => console.log("clear")}
-            >
+            <Button type="danger" size="medium" onClick={onClearAllFromCart}>
               Clear cart
             </Button>
           </div>

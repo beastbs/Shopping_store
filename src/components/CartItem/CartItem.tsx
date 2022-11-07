@@ -2,7 +2,7 @@ import { CartItemProps } from "../../models/models";
 
 import "./CartItem.scss";
 
-const CartItem = ({ title, id, price, index }: CartItemProps) => {
+const CartItem = ({ title, price, index }: CartItemProps) => {
   return (
     <div className="cart-item">
       <span>{`${index + 1}.${title}`}</span>

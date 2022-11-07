@@ -1,6 +1,6 @@
-import GoodsList from "../GoodsList/GoodsList";
-import { GoodsPropsArr } from "../../models/models";
-import Loaded from "../Loaded/Loaded";
+import GoodsList from "../../GoodsList/GoodsList";
+import { GoodsPropsArr } from "../../../models/models";
+import Loaded from "../../Loaded/Loaded";
 
 import "./HomePage.scss";
 

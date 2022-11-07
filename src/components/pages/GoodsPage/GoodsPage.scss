@@ -1,0 +1,55 @@
+.goods-page {
+	padding-bottom: 50px;
+	&__title {
+		text-align: center;
+	}
+	&__slider {
+		position: relative;
+		height: 90vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__img {
+		width: 100%;
+		height: 600px;
+		border-radius: 10px;
+	}
+	&__arr-rigth {
+		position: absolute;
+		top: 50%;
+		right: 32px;
+		font-size: 3rem;
+		color: #fff;
+		z-index: 10;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	&__arr-left {
+		position: absolute;
+		top: 50%;
+		left: 32px;
+		font-size: 3rem;
+		color: #fff;
+		z-index: 10;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	&__slide {
+		opacity: 0;
+		transition-duration: 1s ease;
+	}
+
+	&__slide.active {
+		opacity: 1;
+		transition-duration: 1s;
+		transform: scale(1.08);
+	}
+	&__description {
+		width: 100%;
+		text-align: left;
+		font-size: 24px;
+	}
+}

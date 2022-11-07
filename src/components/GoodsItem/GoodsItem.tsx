@@ -1,14 +1,17 @@
-import { setItemInCart, deleteItemFromCart } from "../../redux/cart/reducer";
 import { useDispatch, useSelector } from "react-redux";
-
-import { GoodsPropsObj, StateParamsWithCart, Goods } from "../../models/models";
+import { useNavigate } from "react-router-dom";
+import { setItemInCart, deleteItemFromCart } from "../../redux/cart/reducer";
+import { setCurrentGoods } from "../../redux/goods/reducer";
 
 import Button from "../Button/Button";
+import { GoodsPropsObj, StateParamsWithCart, Goods } from "../../models/models";
 
 import "./GoodsItem.scss";
 
 const GoodsItem = ({ goods }: GoodsPropsObj) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const items = useSelector(
     (state: StateParamsWithCart) => state.cart.itemsInCart
   );
@@ -24,8 +27,13 @@ const GoodsItem = ({ goods }: GoodsPropsObj) => {
     }
   };
 
+  const handleClick = () => {
+    dispatch(setCurrentGoods(goods));
+    navigate(`/goods/${goods.title}`);
+  };
+
   return (
-    <li className="goods-item" tabIndex={1}>
+    <li onClick={handleClick} className="goods-item" tabIndex={1}>
       <div className="goods-item__details">
         <h3 className="goods-item__title">{goods.title}</h3>
         <img
