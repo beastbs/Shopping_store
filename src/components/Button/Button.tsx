@@ -5,7 +5,6 @@ import classNames from "classnames";
 import "./Button.scss";
 
 const Button = (props: ButtonPropsPrimary) => {
-  // console.log(props);
   const btnClass = classNames({
     btn: true,
     "btn--primary": props.type === "primary",
