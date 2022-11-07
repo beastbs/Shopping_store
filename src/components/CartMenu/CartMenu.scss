@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+.cart-menu {
+	position: absolute;
+	top: 70px;
+	right: 0;
+	background-color: $second-bg;
+	min-width: 400px;
+	padding: 10px 20px;
+	z-index: 2;
+	border-radius: 15px;
+	&__arrange {
+		margin-top: 20px;
+		padding: 20px 0;
+		border-top: 1px solid rgba(255, 255, 255, 0.4);
+	}
+	&__total-price {
+		color: #000;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 15px;
+	}
+	&__wrap-btns {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+}

@@ -5,7 +5,7 @@ interface Category {
 }
 
 export interface Goods {
-  id?: number;
+  id: number;
   title: string;
   price: number;
   description: string;
@@ -24,7 +24,37 @@ export interface GoodsPropsObj {
 
 export interface ButtonPropsPrimary {
   type: string;
-  children?: React.ReactNode;
+  children: React.ReactNode;
   size: string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+export interface CartItemProps {
+  id: number;
+  title: string;
+  price: number;
+  index: number;
+}
+
+export interface ActionParams {
+  type: string;
+  payload: Goods;
+}
+
+export interface StateParams {
+  itemsInCart: Goods[];
+}
+
+export interface StateParamsWithCart {
+  cart: StateParams;
+}
+
+export interface CartMenuProps {
+  items: Goods[];
   onClick: () => void;
+  totalPrice: number;
+}
+
+export interface Quantity {
+  quantity: number;
 }

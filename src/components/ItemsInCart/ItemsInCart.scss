@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+.items-in {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 15px;
+	top: -10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $danger-hover;
+	border-radius: 15px;
+	font-size: 15px;
+	z-index: 2;
+	color: #fff;
+}

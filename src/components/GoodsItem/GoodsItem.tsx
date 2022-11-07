@@ -1,9 +1,29 @@
-import { GoodsPropsObj } from "../../models/models";
+import { setItemInCart, deleteItemFromCart } from "../../redux/cart/reducer";
+import { useDispatch, useSelector } from "react-redux";
+
+import { GoodsPropsObj, StateParamsWithCart, Goods } from "../../models/models";
+
 import Button from "../Button/Button";
 
 import "./GoodsItem.scss";
 
 const GoodsItem = ({ goods }: GoodsPropsObj) => {
+  const dispatch = useDispatch();
+  const items = useSelector(
+    (state: StateParamsWithCart) => state.cart.itemsInCart
+  );
+  const isItemInCart = items.some((item: Goods) => item.id === goods.id);
+
+  const onAddItemInCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+
+    if (isItemInCart) {
+      dispatch(deleteItemFromCart(goods.id));
+    } else {
+      dispatch(setItemInCart(goods));
+    }
+  };
+
   return (
     <li className="goods-item" tabIndex={1}>
       <div className="goods-item__details">
@@ -18,11 +38,11 @@ const GoodsItem = ({ goods }: GoodsPropsObj) => {
           <div className="goods-item__price">Price: {goods.price}$</div>
           <div className="goods-item__buy">
             <Button
-              type={"primary"}
+              type={isItemInCart ? "warning" : "primary"}
               size={"small"}
-              onClick={() => console.log("success")}
+              onClick={onAddItemInCart}
             >
-              Add to cart
+              {isItemInCart ? "Delete from cart" : "Add to cart"}
             </Button>
           </div>
         </div>

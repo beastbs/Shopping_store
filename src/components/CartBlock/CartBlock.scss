@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .cart {
 	display: flex;
 	align-items: center;
@@ -5,8 +7,13 @@
 	&__icon {
 		cursor: pointer;
 		position: relative;
+		outline: none;
+		&-active {
+			color: $main-color;
+		}
 	}
 	&__total-price {
+		min-width: 75px;
 		margin-left: 15px;
 		font-size: 18px;
 		font-weight: bold;

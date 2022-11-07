@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+import { Provider } from "react-redux";
+import { store } from "../../redux";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ShopService from "../../service/ShopService";
 
@@ -17,18 +20,21 @@ function App() {
 
   useEffect(() => {
     shopService.getAllGoods().then((res) => setGoods(res));
+    // eslint-disable-next-line
   }, []);
 
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage goods={goods} />} />
-        </Routes>
-      </div>
-      ;
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <div className="app">
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage goods={goods} />} />
+          </Routes>
+        </div>
+        ;
+      </Router>
+    </Provider>
   );
 }
 
