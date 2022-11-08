@@ -11,7 +11,7 @@ const HomePage = ({ goods }: GoodsPropsArr) => {
         <h1>Home page</h1>
         <h2>All goods :</h2>
       </div>
-      <GoodsList goods={goods} />
+      {goods.length > 0 ? <GoodsList goods={goods} /> : <Loaded />}
     </div>
   );
 };

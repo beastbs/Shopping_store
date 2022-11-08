@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ShopService from "../../service/ShopService";
 
 import Header from "../Header/Header";
-import { HomePage, GoodsPage, OrderPage } from "../pages";
+import { HomePage, GoodsPage, OrderPage, Page404 } from "../pages";
 
 import { Goods } from "./../../models/models";
 
@@ -28,6 +28,7 @@ function App() {
             <Route path="/" element={<HomePage goods={goods} />} />
             <Route path="goods/:title" element={<GoodsPage />} />
             <Route path="order" element={<OrderPage />} />
+            <Route path="*" element={<Page404 />} />
           </Routes>
         </div>
       </Router>
