@@ -2,7 +2,7 @@
 
 ### Pet project React App
 
-### Follow link to try it -
+### Follow link to try it - https://fb-shopping-store.web.app/
 
 ### Tags:
 
